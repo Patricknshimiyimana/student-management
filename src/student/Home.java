@@ -6,12 +6,15 @@ package student;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.print.PrinterException;
 import java.io.File;
+import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
@@ -1964,10 +1967,27 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+        try {
+            MessageFormat header = new MessageFormat("Students Information");
+            MessageFormat footer = new MessageFormat("Page{0, number, integer}");
+            jTable1.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+        } catch (PrinterException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        int id = Integer.parseInt(jTextField3.getText());
+        if (student.doesIdAlreadyExist(id)) {
+            student.delete(id);
+            jTable1.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student's name",
+                "Gender", "Age", "email", "Phone", "Father's name", "Mother's name", "Address"}));
+            student.getStudentValue(jTable1, "");
+            clearStudent();
+        } else {
+            JOptionPane.showMessageDialog(null, "Student does not exist in the database!");
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -1987,7 +2007,6 @@ public class Home extends javax.swing.JFrame {
                 jTable1.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student's name",
                     "Gender", "Age", "email", "Phone", "Father's name", "Mother's name", "Address"}));
                 student.getStudentValue(jTable1, "");
-
                 clearStudent();
 
             } else {
@@ -2002,15 +2021,50 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        if (isNotEmptyStudent()) {
+            int id = Integer.parseInt(jTextField3.getText());
+            if (student.doesIdAlreadyExist(id)) {
+                String name = jTextField4.getText();
+                String age = jComboBox3.getSelectedItem().toString();
+                String gender = jComboBox1.getSelectedItem().toString();
+                String email = jTextField5.getText();
+                String phone = jTextField6.getText();
+                String father = jTextField7.getText();
+                String mother = jTextField8.getText();
+                String address = jTextField9.getText();
+                System.out.println(age);
+                student.update(id, name, gender, age, email, phone, father, mother, address, imagePath);
+                jTable1.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student's name",
+                    "Gender", "Age", "email", "Phone", "Father's name", "Mother's name", "Address", "Image Path"}));
+                student.getStudentValue(jTable1, "");
+                clearStudent();
+            } else {
+                JOptionPane.showMessageDialog(this, "Student id doesn't exist");
+            }
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+//    public boolean check() {
+//        
+//    }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        if (searchField.getText().isEmpty()) {
+
+        } else {
+            jTable1.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student's name",
+                "Gender", "Age", "email", "Phone", "Father's name", "Mother's name", "Address", "Image Path"}));
+            student.getStudentValue(jTable1, searchField.getText());
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        jTable1.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student's name",
+            "Gender", "Age", "email", "Phone", "Father's name", "Mother's name", "Address", "Image Path"}));
+        student.getStudentValue(jTable1, "");
+        searchField.setText(null);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField6KeyTyped
@@ -2043,6 +2097,12 @@ public class Home extends javax.swing.JFrame {
             jComboBox3.setSelectedIndex(3);
         } else if (age.equals("22")) {
             jComboBox3.setSelectedIndex(4);
+        } else if (age.equals("23")) {
+            jComboBox3.setSelectedIndex(5);
+        } else if (age.equals("24")) {
+            jComboBox3.setSelectedIndex(6);
+        } else if (age.equals("25")) {
+            jComboBox3.setSelectedIndex(7);
         } else {
             jComboBox3.setSelectedIndex(4);
         }
