@@ -9,6 +9,8 @@ import java.awt.Image;
 import java.awt.print.PrinterException;
 import java.io.File;
 import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -174,6 +176,8 @@ public class Home extends javax.swing.JFrame {
         jButton39 = new javax.swing.JButton();
         jPanel26 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        txtTime = new javax.swing.JLabel();
+        txtDate = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -1649,28 +1653,42 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Marks Sheet", jPanel27);
 
+        txtTime.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+
+        txtDate.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtTime, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(180, 180, 180))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 782, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -1703,6 +1721,7 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void init() {
+        setTime();
         tableViewStudent();
         jTextField3.setText(String.valueOf(student.getMax()));
     }
@@ -1940,6 +1959,29 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void setTime() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    Date date = new Date();
+                    SimpleDateFormat tf = new SimpleDateFormat("h:mm:ss aa");
+                    SimpleDateFormat df = new SimpleDateFormat("EEEE, dd-MM-yyyy");
+                    String time = tf.format(date);
+                    txtTime.setText(time.split(" ")[0] + " " + time.split(" ")[1]);
+                    txtDate.setText(df.format(date));
+                    System.out.println(time.split(" ")[0] + " " + time.split(" ")[1]);
+                    System.out.println(df.format(date));
+                }
+            }
+        });
+    }
+
     private ImageIcon imageAdjust(String path, byte[] pic) {
         ImageIcon myImage = null;
         if (path != null) {
@@ -1961,6 +2003,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         int a = JOptionPane.showConfirmDialog(this, "Do you want to logout now?", "Select", JOptionPane.YES_NO_OPTION);
         if (a == 0) {
+            new Login().setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -2284,5 +2327,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField searchField;
     private javax.swing.JTextField searchField1;
     private javax.swing.JTextField searchField2;
+    private javax.swing.JLabel txtDate;
+    private javax.swing.JLabel txtTime;
     // End of variables declaration//GEN-END:variables
 }
