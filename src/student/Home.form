@@ -690,6 +690,10 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="jTextField3">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
@@ -1355,6 +1359,7 @@
                                               <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -1363,6 +1368,7 @@
                                               <Component id="jComboBox2" max="32767" attributes="0"/>
                                               <Component id="jComboBox5" max="32767" attributes="0"/>
                                               <Component id="jComboBox6" max="32767" attributes="0"/>
+                                              <Component id="jComboBox4" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                       </Group>
@@ -1393,6 +1399,11 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jComboBox4" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jComboBox5" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
@@ -1409,6 +1420,10 @@
                       <SubComponents>
                         <Component class="javax.swing.JTextField" name="jTextField12">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
@@ -1416,10 +1431,17 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="jTextField13">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel16">
                           <Properties>
@@ -1498,6 +1520,9 @@
                                   <Font name="Helvetica Neue" size="16" style="0"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField31KeyTyped"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="jButton37">
                               <Properties>
@@ -1517,19 +1542,13 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Course 1"/>
+                            <Property name="text" type="java.lang.String" value="Semester"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="jComboBox2">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="5">
-                                <StringItem index="0" value="Introduction to Business Management"/>
-                                <StringItem index="1" value="Business Functions"/>
-                                <StringItem index="2" value="Introduction to Financial Accounting"/>
-                                <StringItem index="3" value="Intermediate Accounting"/>
-                                <StringItem index="4" value="English for General purposes"/>
-                              </StringArray>
+                              <StringArray count="0"/>
                             </Property>
                           </Properties>
                           <AuxValues>
@@ -1584,6 +1603,30 @@
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="jComboBox4">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="5">
+                                <StringItem index="0" value="Introduction to Business Management"/>
+                                <StringItem index="1" value="Business Functions"/>
+                                <StringItem index="2" value="Introduction to Financial Accounting"/>
+                                <StringItem index="3" value="Intermediate Accounting"/>
+                                <StringItem index="4" value="English for General purposes"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel24">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Helvetica Neue" size="16" style="1"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Course 1"/>
+                          </Properties>
                         </Component>
                       </SubComponents>
                     </Container>

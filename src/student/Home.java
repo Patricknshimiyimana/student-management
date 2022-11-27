@@ -27,6 +27,7 @@ import javax.swing.table.DefaultTableModel;
 public class Home extends javax.swing.JFrame {
 
     Student student = new Student();
+    Course course = new Course();
     int xx, xy;
     private String imagePath;
     private DefaultTableModel model;
@@ -121,6 +122,8 @@ public class Home extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jComboBox6 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jLabel24 = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
         jPanel20 = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
@@ -424,6 +427,8 @@ public class Home extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
+        jTextField3.setEditable(false);
+        jTextField3.setBackground(new java.awt.Color(153, 153, 153));
         jTextField3.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -823,8 +828,12 @@ public class Home extends javax.swing.JFrame {
         jPanel16.setBackground(new java.awt.Color(153, 255, 204));
         jPanel16.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 4, true));
 
+        jTextField12.setEditable(false);
+        jTextField12.setBackground(new java.awt.Color(153, 153, 153));
         jTextField12.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
 
+        jTextField13.setEditable(false);
+        jTextField13.setBackground(new java.awt.Color(153, 153, 153));
         jTextField13.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
 
         jLabel16.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
@@ -840,6 +849,11 @@ public class Home extends javax.swing.JFrame {
         jLabel42.setText("Student Id");
 
         jTextField31.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextField31.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField31KeyTyped(evt);
+            }
+        });
 
         jButton37.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jButton37.setText("Search");
@@ -876,9 +890,7 @@ public class Home extends javax.swing.JFrame {
         );
 
         jLabel21.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel21.setText("Course 1");
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Introduction to Business Management", "Business Functions", "Introduction to Financial Accounting", "Intermediate Accounting", "English for General purposes" }));
+        jLabel21.setText("Semester");
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C++ programming", "E-BIZ", "Fundamentals of Mathematics", "Quantitative techniques", "Intermediate Entrepreneurship", " " }));
 
@@ -889,6 +901,11 @@ public class Home extends javax.swing.JFrame {
         jLabel44.setText("Course 3");
 
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Advanced programming in Java", "Web Technologies", "Client/Server side programming", "Networking", "Industrial Attachement" }));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Introduction to Business Management", "Business Functions", "Introduction to Financial Accounting", "Intermediate Accounting", "English for General purposes" }));
+
+        jLabel24.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        jLabel24.setText("Course 1");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -906,14 +923,16 @@ public class Home extends javax.swing.JFrame {
                             .addComponent(jLabel17)
                             .addComponent(jLabel21)
                             .addComponent(jLabel43)
-                            .addComponent(jLabel44))
+                            .addComponent(jLabel44)
+                            .addComponent(jLabel24))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField13, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
                             .addComponent(jTextField12, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
                             .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(15, 15, 15)))
                 .addContainerGap())
         );
@@ -934,6 +953,10 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
@@ -1723,7 +1746,9 @@ public class Home extends javax.swing.JFrame {
     public void init() {
         setTime();
         tableViewStudent();
+        tableViewCourse();
         jTextField3.setText(String.valueOf(student.getMax()));
+        jTextField12.setText(String.valueOf(course.getMax()));
     }
 
     private void tableViewStudent() {
@@ -1733,6 +1758,15 @@ public class Home extends javax.swing.JFrame {
         jTable1.setShowGrid(true);
         jTable1.setGridColor(Color.black);
         jTable1.setBackground(Color.white);
+    }
+
+    private void tableViewCourse() {
+        course.getCourseValues(jTable2, "");
+        model = (DefaultTableModel) jTable2.getModel();
+        jTable2.setRowHeight(30);
+        jTable2.setShowGrid(true);
+        jTable2.setGridColor(Color.black);
+        jTable2.setBackground(Color.white);
     }
 
     private void clearStudent() {
@@ -1749,6 +1783,17 @@ public class Home extends javax.swing.JFrame {
         jLabelImage.setIcon(null);
         jTable1.clearSelection();
         imagePath = null;
+    }
+
+    public void clearCourse() {
+        jTextField12.setText(String.valueOf(course.getMax()));
+        jTextField13.setText(null);
+        jTextField31.setText(null);
+        jComboBox2.removeAllItems();
+        jComboBox4.setSelectedIndex(0);
+        jComboBox5.setSelectedIndex(0);
+        jComboBox6.setSelectedIndex(0);
+        jTable2.clearSelection();
     }
 
     public boolean isNotEmptyStudent() {
@@ -1913,6 +1958,20 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
         // TODO add your handling code here:
+        if (jTextField31.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please enter a student id");
+        } else {
+            int id = Integer.parseInt(jTextField31.getText());
+            if (course.getId(id)) {
+                jComboBox2.removeAllItems();
+                int semester = course.countSemester(id);
+                if (semester >= 0) {
+                    for (int i = 1; i <= semester + 1; i++) {
+                        jComboBox2.addItem(i + "");
+                    }
+                }
+            }
+        }
     }//GEN-LAST:event_jButton37ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
@@ -1929,10 +1988,57 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
+        if (jTextField31.getText().isEmpty() || jComboBox2.getItemCount() == 0) {
+            JOptionPane.showMessageDialog(this, "student id or semester is missing!");
+        } else {
+            int id = Integer.parseInt(jTextField12.getText());
+            int sid = Integer.parseInt(jTextField13.getText());
+            int semesterNo = Integer.parseInt(jComboBox2.getSelectedItem().toString());
+            String course1 = jComboBox4.getSelectedItem().toString();
+            String course2 = jComboBox5.getSelectedItem().toString();
+            String course3 = jComboBox6.getSelectedItem().toString();
+            if (course.doesSemesterExist(sid, semesterNo)) {
+                JOptionPane.showMessageDialog(this, "This student have already taken this semester!");
+            } else {
+                if (course.doesCourseExist(sid, "course1", course1)) {
+                    JOptionPane.showMessageDialog(this, "This student have already taken " + course1 + " course");
+                }
+                if (course.doesCourseExist(sid, "course2", course2)) {
+                    JOptionPane.showMessageDialog(this, "This student have already taken " + course2 + " course");
+                }
+                if (course.doesCourseExist(sid, "course3", course3)) {
+                    JOptionPane.showMessageDialog(this, "This student have already taken " + course3 + " course");
+                }
+                course.insert(id, sid, semesterNo, course1, course2, course3);
+                jTable2.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
+                    "Course1", "course2", "Course3"}));
+                course.getCourseValues(jTable2, "");
+                clearCourse();
+            }
+//              if (course.doesSemesterExist(sid, semesterNo)) {
+//                JOptionPane.showMessageDialog(this, "This student have already taken this semester!");
+//            } else {
+//                if (course.doesCourseExist(sid, "course1", course1)) {
+//                    JOptionPane.showMessageDialog(this, "This student have already taken " + course1 + " course");
+//                } else {
+//                    if (course.doesCourseExist(sid, "course2", course2)) {
+//                        JOptionPane.showMessageDialog(this, "This student have already taken " + course2 + " course");
+//                    } else {
+//                        if (course.doesCourseExist(sid, "course3", course3)) {
+//                            JOptionPane.showMessageDialog(this, "This student have already taken " + course3 + " course");
+//                        } else {
+//                            course.insert(id, sid, semesterNo, course1, course2, course3);
+//                            clearCourse();
+//                        }
+//                    }
+//                }
+//            }
+        }
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
+        clearCourse();
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -2001,7 +2107,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(this, "Do you want to logout now?", "Select", JOptionPane.YES_NO_OPTION);
+        int a = JOptionPane.showConfirmDialog(this, "Do you want to logout now?", "Select", JOptionPane.OK_CANCEL_OPTION);
         if (a == 0) {
             new Login().setVisible(true);
             this.dispose();
@@ -2045,7 +2151,7 @@ public class Home extends javax.swing.JFrame {
                 String father = jTextField7.getText();
                 String mother = jTextField8.getText();
                 String address = jTextField9.getText();
-                System.out.println(age);
+//                System.out.println(age);
                 student.insert(id, name, age, gender, email, phone, father, mother, address, imagePath);
                 jTable1.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student's name",
                     "Gender", "Age", "email", "Phone", "Father's name", "Mother's name", "Address"}));
@@ -2161,6 +2267,13 @@ public class Home extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void jTextField31KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField31KeyTyped
+        // TODO add your handling code here:
+        if (!Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField31KeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -2228,6 +2341,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
@@ -2242,6 +2356,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel42;
@@ -2302,7 +2417,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable5;
     private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
+    public static javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField31;
