@@ -9,6 +9,7 @@ import java.awt.Image;
 import java.awt.print.PrinterException;
 import java.io.File;
 import java.text.MessageFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
@@ -28,10 +29,12 @@ public class Home extends javax.swing.JFrame {
 
     Student student = new Student();
     Course course = new Course();
+    Score score = new Score();
     int xx, xy;
     private String imagePath;
     private DefaultTableModel model;
     private int rowIndex;
+    NumberFormat nf = NumberFormat.getInstance();
 
     public Home() {
         initComponents();
@@ -152,17 +155,16 @@ public class Home extends javax.swing.JFrame {
         jTextField34 = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         jTextField35 = new javax.swing.JTextField();
-        jTextField36 = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
-        jTextField37 = new javax.swing.JTextField();
-        jTextField38 = new javax.swing.JTextField();
+        jTextCourse1 = new javax.swing.JTextField();
+        jTextScore1 = new javax.swing.JTextField();
         jLabel50 = new javax.swing.JLabel();
-        jTextField39 = new javax.swing.JTextField();
-        jTextField40 = new javax.swing.JTextField();
-        jTextField41 = new javax.swing.JTextField();
+        jTextScore2 = new javax.swing.JTextField();
+        jTextCourse2 = new javax.swing.JTextField();
+        jTextCourse3 = new javax.swing.JTextField();
         jLabel51 = new javax.swing.JLabel();
-        jTextField42 = new javax.swing.JTextField();
+        jTextScore3 = new javax.swing.JTextField();
         jPanel27 = new javax.swing.JPanel();
         jPanel28 = new javax.swing.JPanel();
         jPanel30 = new javax.swing.JPanel();
@@ -849,6 +851,11 @@ public class Home extends javax.swing.JFrame {
         jLabel42.setText("Student Id");
 
         jTextField31.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextField31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField31ActionPerformed(evt);
+            }
+        });
         jTextField31.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField31KeyTyped(evt);
@@ -1053,11 +1060,11 @@ public class Home extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Student Id", "Trimeter", "Course 1", "Score 1", "Course 2", "Score 2", "Course 3", "Score 3"
+                "ID", "Student Id", "Trimeter", "Course 1", "Score 1", "Course 2", "Score 2", "Course 3", "Score 3", "Average"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1188,6 +1195,7 @@ public class Home extends javax.swing.JFrame {
         jPanel24.setBackground(new java.awt.Color(153, 255, 204));
         jPanel24.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 4, true));
 
+        jTextField17.setBackground(new java.awt.Color(153, 153, 153));
         jTextField17.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1205,6 +1213,11 @@ public class Home extends javax.swing.JFrame {
         jLabel45.setText("Student Id");
 
         jTextField32.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextField32.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField32KeyTyped(evt);
+            }
+        });
 
         jButton38.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jButton38.setText("Search");
@@ -1215,9 +1228,15 @@ public class Home extends javax.swing.JFrame {
         });
 
         jTextField33.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextField33.setMinimumSize(new java.awt.Dimension(64, 32));
+        jTextField33.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField33KeyTyped(evt);
+            }
+        });
 
         jLabel46.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel46.setText("Trimester");
+        jLabel46.setText("Semester");
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -1248,11 +1267,12 @@ public class Home extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel46)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField33))
+                        .addComponent(jTextField33, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                     .addComponent(jButton38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
         );
 
+        jTextField34.setBackground(new java.awt.Color(153, 153, 153));
         jTextField34.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jTextField34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1263,6 +1283,7 @@ public class Home extends javax.swing.JFrame {
         jLabel47.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel47.setText("Student Id");
 
+        jTextField35.setBackground(new java.awt.Color(153, 153, 153));
         jTextField35.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jTextField35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1270,70 +1291,66 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jTextField36.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
-        jTextField36.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField36ActionPerformed(evt);
-            }
-        });
-
         jLabel48.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel48.setText("Trimester");
+        jLabel48.setText("Semester");
 
         jLabel49.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel49.setText("Course 1");
 
-        jTextField37.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
-        jTextField37.addActionListener(new java.awt.event.ActionListener() {
+        jTextCourse1.setBackground(new java.awt.Color(153, 153, 153));
+        jTextCourse1.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextCourse1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField37ActionPerformed(evt);
+                jTextCourse1ActionPerformed(evt);
             }
         });
 
-        jTextField38.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
-        jTextField38.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField38.setText("00.0");
-        jTextField38.addActionListener(new java.awt.event.ActionListener() {
+        jTextScore1.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextScore1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextScore1.setText("0.0");
+        jTextScore1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField38ActionPerformed(evt);
+                jTextScore1ActionPerformed(evt);
             }
         });
 
         jLabel50.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel50.setText("Course 2");
 
-        jTextField39.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
-        jTextField39.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField39.setText("00.0");
-        jTextField39.addActionListener(new java.awt.event.ActionListener() {
+        jTextScore2.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextScore2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextScore2.setText("0.0");
+        jTextScore2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField39ActionPerformed(evt);
+                jTextScore2ActionPerformed(evt);
             }
         });
 
-        jTextField40.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
-        jTextField40.addActionListener(new java.awt.event.ActionListener() {
+        jTextCourse2.setBackground(new java.awt.Color(153, 153, 153));
+        jTextCourse2.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextCourse2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField40ActionPerformed(evt);
+                jTextCourse2ActionPerformed(evt);
             }
         });
 
-        jTextField41.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
-        jTextField41.addActionListener(new java.awt.event.ActionListener() {
+        jTextCourse3.setBackground(new java.awt.Color(153, 153, 153));
+        jTextCourse3.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextCourse3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField41ActionPerformed(evt);
+                jTextCourse3ActionPerformed(evt);
             }
         });
 
         jLabel51.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel51.setText("Course 3");
 
-        jTextField42.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
-        jTextField42.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField42.setText("00.0");
-        jTextField42.addActionListener(new java.awt.event.ActionListener() {
+        jTextScore3.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextScore3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextScore3.setText("0.0");
+        jTextScore3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField42ActionPerformed(evt);
+                jTextScore3ActionPerformed(evt);
             }
         });
 
@@ -1357,27 +1374,22 @@ public class Home extends javax.swing.JFrame {
                             .addComponent(jLabel51))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
-                                .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextCourse1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextScore1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
-                                .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextCourse2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextScore2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
-                                .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextCourse3, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
-                                .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel24Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jTextScore3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField35, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(17, 17, 17))))
         );
         jPanel24Layout.setVerticalGroup(
@@ -1396,22 +1408,21 @@ public class Home extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel48))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextCourse1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextScore1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel49))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField40, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextCourse2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextScore2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel50))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextCourse3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextScore3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel51))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1747,8 +1758,10 @@ public class Home extends javax.swing.JFrame {
         setTime();
         tableViewStudent();
         tableViewCourse();
+        tableViewScore();
         jTextField3.setText(String.valueOf(student.getMax()));
         jTextField12.setText(String.valueOf(course.getMax()));
+        jTextField17.setText(String.valueOf(score.getMax()));
     }
 
     private void tableViewStudent() {
@@ -1767,6 +1780,15 @@ public class Home extends javax.swing.JFrame {
         jTable2.setShowGrid(true);
         jTable2.setGridColor(Color.black);
         jTable2.setBackground(Color.white);
+    }
+
+    private void tableViewScore() {
+        score.getScoreValues(jTable3, "");
+        model = (DefaultTableModel) jTable3.getModel();
+        jTable3.setRowHeight(30);
+        jTable3.setShowGrid(true);
+        jTable3.setGridColor(Color.black);
+        jTable3.setBackground(Color.white);
     }
 
     private void clearStudent() {
@@ -1794,6 +1816,21 @@ public class Home extends javax.swing.JFrame {
         jComboBox5.setSelectedIndex(0);
         jComboBox6.setSelectedIndex(0);
         jTable2.clearSelection();
+    }
+
+    public void clearScore() {
+        jTextField32.setText(null);
+        jTextField33.setText(null);
+        jTextField17.setText(null);
+        jTextField34.setText(null);
+        jTextField35.setText(null);
+        jTextCourse1.setText(null);
+        jTextCourse2.setText(null);
+        jTextCourse3.setText(null);
+        jTextScore1.setText("0.0");
+        jTextScore2.setText("0.0");
+        jTextScore3.setText("0.0");
+        jTable3.clearSelection();
     }
 
     public boolean isNotEmptyStudent() {
@@ -1880,33 +1917,29 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton31ActionPerformed
 
-    private void jTextField42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField42ActionPerformed
+    private void jTextScore3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextScore3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField42ActionPerformed
+    }//GEN-LAST:event_jTextScore3ActionPerformed
 
-    private void jTextField41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField41ActionPerformed
+    private void jTextCourse3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCourse3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField41ActionPerformed
+    }//GEN-LAST:event_jTextCourse3ActionPerformed
 
-    private void jTextField40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField40ActionPerformed
+    private void jTextCourse2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCourse2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField40ActionPerformed
+    }//GEN-LAST:event_jTextCourse2ActionPerformed
 
-    private void jTextField39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField39ActionPerformed
+    private void jTextScore2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextScore2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField39ActionPerformed
+    }//GEN-LAST:event_jTextScore2ActionPerformed
 
-    private void jTextField38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField38ActionPerformed
+    private void jTextScore1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextScore1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField38ActionPerformed
+    }//GEN-LAST:event_jTextScore1ActionPerformed
 
-    private void jTextField37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField37ActionPerformed
+    private void jTextCourse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCourse1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField37ActionPerformed
-
-    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField36ActionPerformed
+    }//GEN-LAST:event_jTextCourse1ActionPerformed
 
     private void jTextField35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35ActionPerformed
         // TODO add your handling code here:
@@ -1918,6 +1951,13 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
         // TODO add your handling code here:
+        if (jTextField32.getText().isEmpty() || jTextField33.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Student id or semester number is missing!");
+        } else {
+            int sid = Integer.parseInt(jTextField32.getText());
+            int semesterNo = Integer.parseInt(jTextField33.getText());
+            score.getDetails(sid, semesterNo);
+        }
     }//GEN-LAST:event_jButton38ActionPerformed
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
@@ -1938,10 +1978,60 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         // TODO add your handling code here:
+        if (!jTextField34.getText().isEmpty()) {
+            if (!score.doesIdAlreadyExist(Integer.parseInt(jTextField17.getText()))) {
+                int sid = Integer.parseInt(jTextField32.getText());
+                int semesterNo = Integer.parseInt(jTextField33.getText());
+                if (!score.doesStuId_SemesterNo_AlreadyExist(sid, semesterNo)) {
+                    if (isValidScore(jTextScore1.getText())
+                            && isValidScore(jTextScore2.getText())
+                            && isValidScore(jTextScore3.getText())) {
+
+                        int id = score.getMax();
+                        String course1 = jTextCourse1.getText();
+                        String course2 = jTextCourse2.getText();
+                        String course3 = jTextCourse3.getText();
+
+                        double score1 = Double.parseDouble(jTextScore1.getText());
+                        double score2 = Double.parseDouble(jTextScore2.getText());
+                        double score3 = Double.parseDouble(jTextScore3.getText());
+                        double average = (score1 + score2 + score3) / 5;
+                        nf.setMaximumFractionDigits(2);
+                        score.insert(id, sid, semesterNo, course1, course2, course3, score1, score2, score3, Double.parseDouble(nf.format(average)));
+                        jTable3.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
+                            "Course1", "Score1", "course2", "Score2", "Course3", "Score3", "Average"}));
+                        score.getScoreValues(jTable3, "");
+                        clearScore();
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "semester " + semesterNo + " score already added");
+
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "This score already exists!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "No student selected!");
+        }
     }//GEN-LAST:event_jButton23ActionPerformed
+
+    private boolean isValidScore(String s) {
+        double score = Double.parseDouble(s);
+        try {
+            if (score >= 0.0 && score <= 100.0) {
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(this, "The score must be between 0.0 and 100.0");
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "" + e);
+        }
+        return false;
+    }
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         // TODO add your handling code here:
+        clearScore();
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
@@ -1984,6 +2074,13 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
+        try {
+            MessageFormat header = new MessageFormat("All student's courses Information");
+            MessageFormat footer = new MessageFormat("Page{0, number, integer}");
+            jTable2.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+        } catch (PrinterException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -2043,10 +2140,21 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        if (searchField1.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter a student id");
+        } else {
+            jTable2.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
+                "Course1", "course2", "Course3"}));
+            course.getCourseValues(jTable2, searchField1.getText());
+        }
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
+        jTable2.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
+            "Course1", "course2", "Course3"}));
+        course.getCourseValues(jTable2, "");
+        searchField1.setText(null);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -2274,6 +2382,24 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextField31KeyTyped
 
+    private void jTextField31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField31ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField31ActionPerformed
+
+    private void jTextField32KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField32KeyTyped
+        // TODO add your handling code here:
+        if (!Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField32KeyTyped
+
+    private void jTextField33KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField33KeyTyped
+        // TODO add your handling code here:
+        if (!Character.isDigit(evt.getKeyChar())) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField33KeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -2416,29 +2542,28 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable5;
+    public static javax.swing.JTextField jTextCourse1;
+    public static javax.swing.JTextField jTextCourse2;
+    public static javax.swing.JTextField jTextCourse3;
     private javax.swing.JTextField jTextField12;
     public static javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField17;
+    public static javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField32;
     private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
+    public static javax.swing.JTextField jTextField34;
+    public static javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
-    private javax.swing.JTextField jTextField42;
     private javax.swing.JTextField jTextField43;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextScore1;
+    private javax.swing.JTextField jTextScore2;
+    private javax.swing.JTextField jTextScore3;
     private javax.swing.JTextField searchField;
     private javax.swing.JTextField searchField1;
     private javax.swing.JTextField searchField2;

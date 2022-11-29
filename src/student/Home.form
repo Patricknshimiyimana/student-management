@@ -1521,6 +1521,7 @@
                                 </Property>
                               </Properties>
                               <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField31ActionPerformed"/>
                                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField31KeyTyped"/>
                               </Events>
                             </Component>
@@ -1840,7 +1841,7 @@
                                 <Component class="javax.swing.JTable" name="jTable3">
                                   <Properties>
                                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                      <Table columnCount="9" rowCount="0">
+                                      <Table columnCount="10" rowCount="0">
                                         <Column editable="false" title="ID" type="java.lang.Object"/>
                                         <Column editable="false" title="Student Id" type="java.lang.Object"/>
                                         <Column editable="false" title="Trimeter" type="java.lang.Object"/>
@@ -1850,10 +1851,16 @@
                                         <Column editable="false" title="Score 2" type="java.lang.Object"/>
                                         <Column editable="false" title="Course 3" type="java.lang.Object"/>
                                         <Column editable="false" title="Score 3" type="java.lang.Object"/>
+                                        <Column editable="false" title="Average" type="java.lang.Object"/>
                                       </Table>
                                     </Property>
                                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                       <TableColumnModel selectionModel="0">
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
                                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                           <Title/>
                                           <Editor/>
@@ -2068,33 +2075,26 @@
                                           </Group>
                                           <EmptySpace pref="37" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jTextField37" min="-2" pref="197" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jTextField38" min="-2" pref="85" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                  <Component id="jTextField17" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
+                                                  <Component id="jTextField34" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jTextField40" min="-2" pref="197" max="-2" attributes="0"/>
+                                                  <Component id="jTextCourse1" min="-2" pref="197" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jTextField39" min="-2" pref="85" max="-2" attributes="0"/>
+                                                  <Component id="jTextScore1" min="-2" pref="85" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jTextField41" min="-2" pref="197" max="-2" attributes="0"/>
+                                                  <Component id="jTextCourse2" min="-2" pref="197" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jTextField42" min="-2" pref="85" max="-2" attributes="0"/>
+                                                  <Component id="jTextScore2" min="-2" pref="85" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jTextField35" min="-2" pref="197" max="-2" attributes="0"/>
+                                                  <Component id="jTextCourse3" min="-2" pref="197" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jTextField36" min="-2" pref="85" max="-2" attributes="0"/>
+                                                  <Component id="jTextScore3" min="-2" pref="85" max="-2" attributes="0"/>
                                               </Group>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField17" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
-                                                      <Component id="jTextField34" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
+                                              <Component id="jTextField35" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                       </Group>
@@ -2120,25 +2120,24 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jTextField35" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="jTextField36" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField37" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="jTextField38" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="jTextCourse1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="jTextScore1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField40" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="jTextField39" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="jTextCourse2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="jTextScore2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField41" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="jTextField42" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="jTextCourse3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="jTextScore3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
@@ -2149,6 +2148,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTextField" name="jTextField17">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
@@ -2156,6 +2158,9 @@
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField17ActionPerformed"/>
                           </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel23">
                           <Properties>
@@ -2212,7 +2217,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jTextField33" max="32767" attributes="0"/>
+                                              <Component id="jTextField33" pref="32" max="32767" attributes="0"/>
                                           </Group>
                                           <Component id="jButton38" max="32767" attributes="0"/>
                                       </Group>
@@ -2236,6 +2241,9 @@
                                   <Font name="Helvetica Neue" size="16" style="0"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField32KeyTyped"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JButton" name="jButton38">
                               <Properties>
@@ -2253,20 +2261,29 @@
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Helvetica Neue" size="16" style="0"/>
                                 </Property>
+                                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[64, 32]"/>
+                                </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField33KeyTyped"/>
+                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel46">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Helvetica Neue" size="16" style="1"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="Trimester"/>
+                                <Property name="text" type="java.lang.String" value="Semester"/>
                               </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
                         <Component class="javax.swing.JTextField" name="jTextField34">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
@@ -2274,6 +2291,9 @@
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField34ActionPerformed"/>
                           </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel47">
                           <Properties>
@@ -2285,6 +2305,9 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="jTextField35">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
@@ -2292,23 +2315,16 @@
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField35ActionPerformed"/>
                           </Events>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField36">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Helvetica Neue" size="16" style="0"/>
-                            </Property>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField36ActionPerformed"/>
-                          </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel48">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="1"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Trimester"/>
+                            <Property name="text" type="java.lang.String" value="Semester"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel49">
@@ -2319,26 +2335,32 @@
                             <Property name="text" type="java.lang.String" value="Course 1"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField37">
+                        <Component class="javax.swing.JTextField" name="jTextCourse1">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField37ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextCourse1ActionPerformed"/>
                           </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField38">
+                        <Component class="javax.swing.JTextField" name="jTextScore1">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="00.0"/>
+                            <Property name="text" type="java.lang.String" value="0.0"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField38ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextScore1ActionPerformed"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel50">
@@ -2349,37 +2371,49 @@
                             <Property name="text" type="java.lang.String" value="Course 2"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField39">
+                        <Component class="javax.swing.JTextField" name="jTextScore2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="00.0"/>
+                            <Property name="text" type="java.lang.String" value="0.0"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField39ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextScore2ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField40">
+                        <Component class="javax.swing.JTextField" name="jTextCourse2">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField40ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextCourse2ActionPerformed"/>
                           </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField41">
+                        <Component class="javax.swing.JTextField" name="jTextCourse3">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField41ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextCourse3ActionPerformed"/>
                           </Events>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel51">
                           <Properties>
@@ -2389,16 +2423,16 @@
                             <Property name="text" type="java.lang.String" value="Course 3"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField42">
+                        <Component class="javax.swing.JTextField" name="jTextScore3">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="16" style="0"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="00.0"/>
+                            <Property name="text" type="java.lang.String" value="0.0"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField42ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextScore3ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>
