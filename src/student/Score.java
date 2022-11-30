@@ -168,7 +168,7 @@ public class Score {
             ps.setDouble(2, score2);
             ps.setDouble(3, score3);
             ps.setDouble(4, average);
-            ps.setInt(10, id);
+            ps.setInt(5, id);
 
             if (ps.executeUpdate() > 0) {
                 JOptionPane.showMessageDialog(null, "Score updated successfully!");
