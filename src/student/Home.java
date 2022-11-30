@@ -1071,6 +1071,11 @@ public class Home extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable3MouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jTable3);
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
@@ -1995,7 +2000,7 @@ public class Home extends javax.swing.JFrame {
                         double score1 = Double.parseDouble(jTextScore1.getText());
                         double score2 = Double.parseDouble(jTextScore2.getText());
                         double score3 = Double.parseDouble(jTextScore3.getText());
-                        double average = (score1 + score2 + score3) / 5;
+                        double average = (score1 + score2 + score3) / 3;
                         nf.setMaximumFractionDigits(2);
                         score.insert(id, sid, semesterNo, course1, course2, course3, score1, score2, score3, Double.parseDouble(nf.format(average)));
                         jTable3.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
@@ -2036,6 +2041,21 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
+        int id = Integer.parseInt(jTextField17.getText());
+        if (score.doesIdAlreadyExist(id)) {
+            double score1 = Double.parseDouble(jTextScore1.getText());
+            double score2 = Double.parseDouble(jTextScore2.getText());
+            double score3 = Double.parseDouble(jTextScore3.getText());
+            double average = (score1 + score2 + score3) / 3;
+            nf.setMaximumFractionDigits(2);
+            score.update(id, score1, score2, score3, Double.parseDouble(nf.format(average)));
+            jTable3.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
+                "Course1", "Score1", "course2", "Score2", "Course3", "Score3", "Average"}));
+            score.getScoreValues(jTable3, "");
+            clearScore();
+        } else {
+            JOptionPane.showMessageDialog(this, "Score id doesn't exists!");
+        }
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
@@ -2399,6 +2419,21 @@ public class Home extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_jTextField33KeyTyped
+
+    private void jTable3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MouseClicked
+        // TODO add your handling code here:
+        model = (DefaultTableModel) jTable3.getModel();
+        rowIndex = jTable3.getSelectedRow();
+        jTextField17.setText(model.getValueAt(rowIndex, 0).toString());
+        jTextField34.setText(model.getValueAt(rowIndex, 1).toString());
+        jTextField35.setText(model.getValueAt(rowIndex, 2).toString());
+        jTextCourse1.setText(model.getValueAt(rowIndex, 3).toString());
+        jTextScore1.setText(model.getValueAt(rowIndex, 4).toString());
+        jTextCourse2.setText(model.getValueAt(rowIndex, 5).toString());
+        jTextScore2.setText(model.getValueAt(rowIndex, 6).toString());
+        jTextCourse3.setText(model.getValueAt(rowIndex, 7).toString());
+        jTextScore3.setText(model.getValueAt(rowIndex, 8).toString());
+    }//GEN-LAST:event_jTable3MouseClicked
 
     /**
      * @param args the command line arguments

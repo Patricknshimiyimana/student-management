@@ -158,4 +158,24 @@ public class Score {
             Logger.getLogger(Score.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+      // Update student's score
+    public void update(int id, double score1, double score2, double score3, double average) {
+        String sql = "update score set score1=?,score2=?,score3=?,average=? where id=?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setDouble(1, score1);
+            ps.setDouble(2, score2);
+            ps.setDouble(3, score3);
+            ps.setDouble(4, average);
+            ps.setInt(10, id);
+
+            if (ps.executeUpdate() > 0) {
+                JOptionPane.showMessageDialog(null, "Score updated successfully!");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Score.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
