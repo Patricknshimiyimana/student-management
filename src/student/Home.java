@@ -30,6 +30,7 @@ public class Home extends javax.swing.JFrame {
     Student student = new Student();
     Course course = new Course();
     Score score = new Score();
+    MarkSheet markSheet = new MarkSheet();
     int xx, xy;
     private String imagePath;
     private DefaultTableModel model;
@@ -1006,7 +1007,7 @@ public class Home extends javax.swing.JFrame {
         jPanel21.setBackground(new java.awt.Color(153, 255, 204));
         jPanel21.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
 
-        jLabel22.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel22.setText("Search student");
 
         jButton19.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -1468,11 +1469,11 @@ public class Home extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Student Id", "Trimeter", "Course 1", "Score 1", "Course 2", "Score 2", "Course 3", "Score 3"
+                "ID", "Student Id", "Trimeter", "Course 1", "Score 1", "Course 2", "Score 2", "Course 3", "Score 3", "Average"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -1625,9 +1626,9 @@ public class Home extends javax.swing.JFrame {
         jPanel26.setBackground(new java.awt.Color(153, 255, 204));
         jPanel26.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 22)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("GRADE: 00.0");
+        jLabel13.setText("AVERAGE: 0.0");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -1764,6 +1765,7 @@ public class Home extends javax.swing.JFrame {
         tableViewStudent();
         tableViewCourse();
         tableViewScore();
+        tableViewScoreMarkSheet();
         jTextField3.setText(String.valueOf(student.getMax()));
         jTextField12.setText(String.valueOf(course.getMax()));
         jTextField17.setText(String.valueOf(score.getMax()));
@@ -1794,6 +1796,14 @@ public class Home extends javax.swing.JFrame {
         jTable3.setShowGrid(true);
         jTable3.setGridColor(Color.black);
         jTable3.setBackground(Color.white);
+    }
+
+    private void tableViewScoreMarkSheet() {
+        model = (DefaultTableModel) jTable5.getModel();
+        jTable5.setRowHeight(30);
+        jTable5.setShowGrid(true);
+        jTable5.setGridColor(Color.black);
+        jTable5.setBackground(Color.white);
     }
 
     private void clearStudent() {
@@ -1904,6 +1914,21 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
         // TODO add your handling code here:
+        if (jTextField43.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter a student id");
+        } else {
+            int sid = Integer.parseInt(jTextField43.getText());
+            if (markSheet.doesIdAlreadyExist(sid)) {
+                jTable5.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
+                    "Course1", "Score1", "course2", "Score2", "Course3", "Score3", "Average"}));
+                markSheet.getScoreValues(jTable5, sid);
+                String average = String.valueOf(String.format("%.2f", markSheet.getAverage(sid)));
+                jLabel13.setText("AVERAGE " + average);
+            } else {
+                JOptionPane.showMessageDialog(this, "No scores found!");
+            }
+        }
+
     }//GEN-LAST:event_jButton39ActionPerformed
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
@@ -1916,10 +1941,21 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
         // TODO add your handling code here:
+        try {
+            MessageFormat header = new MessageFormat("Marks' sheet Student ID " + jTextField43.getText() + " " + jLabel13.getText());
+            MessageFormat footer = new MessageFormat("Page{0, number, integer}");
+            jTable5.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+        } catch (PrinterException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
         // TODO add your handling code here:
+        jTextField43.setText(null);
+        jLabel13.setText("AVERAGE: 0.0");
+        jTable5.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
+            "Course1", "Score1", "course2", "Score2", "Course3", "Score3", "Average"}));
     }//GEN-LAST:event_jButton31ActionPerformed
 
     private void jTextScore3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextScore3ActionPerformed
@@ -1979,6 +2015,13 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         // TODO add your handling code here:
+        try {
+            MessageFormat header = new MessageFormat("Students' Scores");
+            MessageFormat footer = new MessageFormat("Page{0, number, integer}");
+            jTable3.print(JTable.PrintMode.FIT_WIDTH, header, footer);
+        } catch (PrinterException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
@@ -2041,18 +2084,22 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
-        int id = Integer.parseInt(jTextField17.getText());
-        if (score.doesIdAlreadyExist(id)) {
-            double score1 = Double.parseDouble(jTextScore1.getText());
-            double score2 = Double.parseDouble(jTextScore2.getText());
-            double score3 = Double.parseDouble(jTextScore3.getText());
-            double average = (score1 + score2 + score3) / 3;
-            nf.setMaximumFractionDigits(2);
-            score.update(id, score1, score2, score3, Double.parseDouble(nf.format(average)));
-            jTable3.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
-                "Course1", "Score1", "course2", "Score2", "Course3", "Score3", "Average"}));
-            score.getScoreValues(jTable3, "");
-            clearScore();
+        if (isValidScore(jTextScore1.getText())
+                && isValidScore(jTextScore2.getText())
+                && isValidScore(jTextScore3.getText())) {
+            int id = Integer.parseInt(jTextField17.getText());
+            if (score.doesIdAlreadyExist(id)) {
+                double score1 = Double.parseDouble(jTextScore1.getText());
+                double score2 = Double.parseDouble(jTextScore2.getText());
+                double score3 = Double.parseDouble(jTextScore3.getText());
+                double average = (score1 + score2 + score3) / 3;
+                nf.setMaximumFractionDigits(2);
+                score.update(id, score1, score2, score3, Double.parseDouble(nf.format(average)));
+                jTable3.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
+                    "Course1", "Score1", "course2", "Score2", "Course3", "Score3", "Average"}));
+                score.getScoreValues(jTable3, "");
+                clearScore();
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Score id doesn't exists!");
         }
@@ -2060,10 +2107,21 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
+        if (searchField2.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Search field is empty!");
+        } else {
+            jTable3.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
+                "Course1", "Score1", "course2", "Score2", "Course3", "Score3", "Average"}));
+            score.getScoreValues(jTable3, searchField2.getText());
+        }
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
+        jTable3.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
+            "Course1", "Score1", "course2", "Score2", "Course3", "Score3", "Average"}));
+        score.getScoreValues(jTable3, "");
+        searchField2.setText(null);
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
@@ -2161,7 +2219,7 @@ public class Home extends javax.swing.JFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
         if (searchField1.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please enter a student id");
+            JOptionPane.showMessageDialog(this, "Search field is empty!");
         } else {
             jTable2.setModel(new DefaultTableModel(null, new Object[]{"ID", "Student ID", "Semester",
                 "Course1", "course2", "Course3"}));
@@ -2328,7 +2386,7 @@ public class Home extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         if (searchField.getText().isEmpty()) {
-
+            JOptionPane.showMessageDialog(this, "Search field is empty!");
         } else {
             jTable1.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student's name",
                 "Gender", "Age", "email", "Phone", "Father's name", "Mother's name", "Address", "Image Path"}));

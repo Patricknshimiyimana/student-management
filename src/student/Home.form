@@ -1765,7 +1765,7 @@
                             <Component class="javax.swing.JLabel" name="jLabel22">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Helvetica Neue" size="18" style="0"/>
+                                  <Font name="Helvetica Neue" size="18" style="1"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="Search student"/>
                               </Properties>
@@ -2573,7 +2573,7 @@
                                 <Component class="javax.swing.JTable" name="jTable5">
                                   <Properties>
                                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                      <Table columnCount="9" rowCount="0">
+                                      <Table columnCount="10" rowCount="0">
                                         <Column editable="false" title="ID" type="java.lang.Object"/>
                                         <Column editable="false" title="Student Id" type="java.lang.Object"/>
                                         <Column editable="false" title="Trimeter" type="java.lang.Object"/>
@@ -2583,10 +2583,16 @@
                                         <Column editable="false" title="Score 2" type="java.lang.Object"/>
                                         <Column editable="false" title="Course 3" type="java.lang.Object"/>
                                         <Column editable="false" title="Score 3" type="java.lang.Object"/>
+                                        <Column editable="false" title="Average" type="java.lang.Object"/>
                                       </Table>
                                     </Property>
                                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                       <TableColumnModel selectionModel="0">
+                                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                          <Title/>
+                                          <Editor/>
+                                          <Renderer/>
+                                        </Column>
                                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                           <Title/>
                                           <Editor/>
@@ -2887,10 +2893,10 @@
                             <Component class="javax.swing.JLabel" name="jLabel13">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Helvetica Neue" size="24" style="1"/>
+                                  <Font name="Helvetica Neue" size="22" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="GRADE: 00.0"/>
+                                <Property name="text" type="java.lang.String" value="AVERAGE: 0.0"/>
                               </Properties>
                             </Component>
                           </SubComponents>
