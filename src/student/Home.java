@@ -193,11 +193,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setToolTipText("");
 
-        jPanel2.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(64, 89, 147));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel2MouseDragged(evt);
@@ -210,17 +210,18 @@ public class Home extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("STUDENT MANAGEMENT SYSTEM");
 
+        jTabbedPane1.setBackground(new java.awt.Color(204, 204, 255));
         jTabbedPane1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
 
-        jPanel3.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel4.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel4.setBackground(new java.awt.Color(113, 126, 157));
         jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 4, true));
 
-        jPanel8.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
+        jPanel8.setBackground(new java.awt.Color(113, 126, 157));
 
         jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel10.setText("Search student");
@@ -268,7 +269,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel9.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel9.setBackground(new java.awt.Color(113, 126, 157));
         jPanel9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -311,11 +312,12 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel10.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
+        jPanel10.setBackground(new java.awt.Color(64, 89, 147));
+        jPanel10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 255), 4, true));
 
-        jButton2.setBackground(new java.awt.Color(102, 255, 255));
+        jButton2.setBackground(new java.awt.Color(120, 167, 98));
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Update");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -323,8 +325,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(102, 255, 255));
+        jButton5.setBackground(new java.awt.Color(120, 167, 98));
         jButton5.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Clear");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,8 +335,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setBackground(new java.awt.Color(102, 255, 255));
+        jButton6.setBackground(new java.awt.Color(120, 167, 98));
         jButton6.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Add new");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,8 +345,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(102, 255, 255));
+        jButton7.setBackground(new java.awt.Color(120, 167, 98));
         jButton7.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Delete");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -350,8 +355,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(102, 255, 255));
+        jButton8.setBackground(new java.awt.Color(120, 167, 98));
         jButton8.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Print");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -359,8 +365,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setBackground(new java.awt.Color(102, 255, 255));
+        jButton9.setBackground(new java.awt.Color(120, 167, 98));
         jButton9.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Logout");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -425,7 +432,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        jPanel5.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel5.setBackground(new java.awt.Color(64, 89, 147));
         jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 4, true));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
@@ -442,6 +449,11 @@ public class Home extends javax.swing.JFrame {
         jTextField4.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
 
         jTextField5.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
 
         jTextField6.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jTextField6.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -480,11 +492,12 @@ public class Home extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel9.setText("Address");
 
-        jPanel6.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
+        jPanel6.setBackground(new java.awt.Color(113, 126, 157));
+        jPanel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
 
-        jButton1.setBackground(new java.awt.Color(102, 255, 255));
+        jButton1.setBackground(new java.awt.Color(120, 167, 98));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Browse");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -630,7 +643,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(36, 36, 36)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(165, 165, 165))
         );
@@ -646,13 +659,12 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Student", jPanel3);
 
-        jPanel11.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel11.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel12.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel12.setBackground(new java.awt.Color(113, 126, 157));
         jPanel12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 4, true));
 
-        jPanel13.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
+        jPanel13.setBackground(new java.awt.Color(113, 126, 157));
 
         jLabel12.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel12.setText("Search student");
@@ -700,7 +712,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel14.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel14.setBackground(new java.awt.Color(113, 126, 157));
         jPanel14.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -738,11 +750,12 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel15.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel15.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
+        jPanel15.setBackground(new java.awt.Color(64, 89, 147));
+        jPanel15.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 255), 4, true));
 
-        jButton13.setBackground(new java.awt.Color(102, 255, 255));
+        jButton13.setBackground(new java.awt.Color(120, 167, 98));
         jButton13.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setText("Clear");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -750,8 +763,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton14.setBackground(new java.awt.Color(102, 255, 255));
+        jButton14.setBackground(new java.awt.Color(120, 167, 98));
         jButton14.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton14.setForeground(new java.awt.Color(255, 255, 255));
         jButton14.setText("Save");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -759,8 +773,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton16.setBackground(new java.awt.Color(102, 255, 255));
+        jButton16.setBackground(new java.awt.Color(120, 167, 98));
         jButton16.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton16.setForeground(new java.awt.Color(255, 255, 255));
         jButton16.setText("Print");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -768,8 +783,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton17.setBackground(new java.awt.Color(102, 255, 255));
+        jButton17.setBackground(new java.awt.Color(120, 167, 98));
         jButton17.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton17.setForeground(new java.awt.Color(255, 255, 255));
         jButton17.setText("Logout");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -828,7 +844,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        jPanel16.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel16.setBackground(new java.awt.Color(64, 89, 147));
         jPanel16.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 4, true));
 
         jTextField12.setEditable(false);
@@ -845,8 +861,8 @@ public class Home extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel17.setText("Student Id");
 
-        jPanel17.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
+        jPanel17.setBackground(new java.awt.Color(113, 126, 157));
+        jPanel17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
 
         jLabel42.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel42.setText("Student Id");
@@ -983,7 +999,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(22, 22, 22)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(165, 165, 165))
         );
@@ -999,12 +1015,12 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Course", jPanel11);
 
-        jPanel19.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel20.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel20.setBackground(new java.awt.Color(113, 126, 157));
         jPanel20.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 4, true));
 
-        jPanel21.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel21.setBackground(new java.awt.Color(113, 126, 157));
         jPanel21.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
 
         jLabel22.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -1053,7 +1069,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel22.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel22.setBackground(new java.awt.Color(113, 126, 157));
         jPanel22.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
@@ -1096,11 +1112,12 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel23.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel23.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
+        jPanel23.setBackground(new java.awt.Color(64, 89, 147));
+        jPanel23.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 255), 4, true));
 
-        jButton21.setBackground(new java.awt.Color(102, 255, 255));
+        jButton21.setBackground(new java.awt.Color(120, 167, 98));
         jButton21.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton21.setForeground(new java.awt.Color(255, 255, 255));
         jButton21.setText("Update");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1108,8 +1125,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton22.setBackground(new java.awt.Color(102, 255, 255));
+        jButton22.setBackground(new java.awt.Color(120, 167, 98));
         jButton22.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton22.setForeground(new java.awt.Color(255, 255, 255));
         jButton22.setText("Clear");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1117,8 +1135,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton23.setBackground(new java.awt.Color(102, 255, 255));
+        jButton23.setBackground(new java.awt.Color(120, 167, 98));
         jButton23.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton23.setForeground(new java.awt.Color(255, 255, 255));
         jButton23.setText("Save");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1126,8 +1145,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton25.setBackground(new java.awt.Color(102, 255, 255));
+        jButton25.setBackground(new java.awt.Color(120, 167, 98));
         jButton25.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton25.setForeground(new java.awt.Color(255, 255, 255));
         jButton25.setText("Print");
         jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1135,8 +1155,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton26.setBackground(new java.awt.Color(102, 255, 255));
+        jButton26.setBackground(new java.awt.Color(120, 167, 98));
         jButton26.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton26.setForeground(new java.awt.Color(255, 255, 255));
         jButton26.setText("Logout");
         jButton26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1159,7 +1180,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1198,7 +1219,7 @@ public class Home extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        jPanel24.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel24.setBackground(new java.awt.Color(64, 89, 147));
         jPanel24.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 4, true));
 
         jTextField17.setBackground(new java.awt.Color(153, 153, 153));
@@ -1212,8 +1233,8 @@ public class Home extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel23.setText("ID");
 
-        jPanel18.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel18.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
+        jPanel18.setBackground(new java.awt.Color(113, 126, 157));
+        jPanel18.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
 
         jLabel45.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel45.setText("Student Id");
@@ -1440,7 +1461,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(31, 31, 31)
                 .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(165, 165, 165))
         );
@@ -1456,13 +1477,11 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Score", jPanel19);
 
-        jPanel27.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel27.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel28.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel28.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 4, true));
+        jPanel28.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel30.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel30.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
+        jPanel30.setBackground(new java.awt.Color(204, 204, 255));
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1486,16 +1505,16 @@ public class Home extends javax.swing.JFrame {
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 882, Short.MAX_VALUE)
+            .addGap(0, 912, Short.MAX_VALUE)
             .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel30Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 621, Short.MAX_VALUE)
+            .addGap(0, 636, Short.MAX_VALUE)
             .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel30Layout.createSequentialGroup()
                     .addContainerGap()
@@ -1503,11 +1522,12 @@ public class Home extends javax.swing.JFrame {
                     .addContainerGap()))
         );
 
-        jPanel31.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel31.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
+        jPanel31.setBackground(new java.awt.Color(64, 89, 147));
+        jPanel31.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 255), 4, true));
 
-        jButton31.setBackground(new java.awt.Color(102, 255, 255));
+        jButton31.setBackground(new java.awt.Color(120, 167, 98));
         jButton31.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton31.setForeground(new java.awt.Color(255, 255, 255));
         jButton31.setText("Clear");
         jButton31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1515,8 +1535,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton34.setBackground(new java.awt.Color(102, 255, 255));
+        jButton34.setBackground(new java.awt.Color(120, 167, 98));
         jButton34.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton34.setForeground(new java.awt.Color(255, 255, 255));
         jButton34.setText("Print");
         jButton34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1524,8 +1545,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton35.setBackground(new java.awt.Color(102, 255, 255));
+        jButton35.setBackground(new java.awt.Color(120, 167, 98));
         jButton35.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jButton35.setForeground(new java.awt.Color(255, 255, 255));
         jButton35.setText("Logout");
         jButton35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1544,7 +1566,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jButton31, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(442, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1562,11 +1584,11 @@ public class Home extends javax.swing.JFrame {
         jPanel28Layout.setHorizontalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel28Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1578,11 +1600,10 @@ public class Home extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        jPanel32.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel32.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 4, true));
+        jPanel32.setBackground(new java.awt.Color(64, 89, 147));
 
-        jPanel25.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel25.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
+        jPanel25.setBackground(new java.awt.Color(113, 126, 157));
+        jPanel25.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 204), 4, true));
 
         jLabel52.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel52.setText("Student Id");
@@ -1623,10 +1644,12 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        jPanel26.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel26.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
+        jPanel26.setBackground(new java.awt.Color(120, 167, 98));
+        jPanel26.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 255), 4, true));
 
+        jLabel13.setBackground(new java.awt.Color(120, 167, 98));
         jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 22)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("AVERAGE: 0.0");
 
@@ -1665,7 +1688,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel32Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 523, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 530, Short.MAX_VALUE)
                 .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1677,9 +1700,9 @@ public class Home extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(34, 34, 34)
                 .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(165, 165, 165))
+                .addGap(167, 167, 167))
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1728,7 +1751,7 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 782, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -2492,6 +2515,10 @@ public class Home extends javax.swing.JFrame {
         jTextCourse3.setText(model.getValueAt(rowIndex, 7).toString());
         jTextScore3.setText(model.getValueAt(rowIndex, 8).toString());
     }//GEN-LAST:event_jTable3MouseClicked
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
     /**
      * @param args the command line arguments
